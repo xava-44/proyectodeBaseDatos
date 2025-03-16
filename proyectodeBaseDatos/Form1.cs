@@ -11,7 +11,8 @@ using System.Windows.Forms;
 namespace proyectodeBaseDatos
 {
     public partial class Form1 : Form
-    {
+    {     
+        MetodosEmpleados user=new MetodosEmpleados();
         public Form1()
         {
             InitializeComponent();
@@ -24,6 +25,28 @@ namespace proyectodeBaseDatos
 
         private void button1_Click(object sender, EventArgs e)
         {
+            int numempleado= int.Parse(textBoxNoEmpleado.Text);
+            string passw=textBoxPassword.Text;
+            
+            Boolean registro=user.ObtenerRegistro(numempleado, passw);
+
+            if (registro)
+            {
+                FormMenuAsistente formMenuAsistente = new FormMenuAsistente();
+                formMenuAsistente.MdiParent = this;
+                formMenuAsistente.Show();
+
+
+            }else
+            {
+                MessageBox.Show("datos incorrectos ");
+
+            }
+           
+
+
+
+
 
         }
 

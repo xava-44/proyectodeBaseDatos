@@ -3,24 +3,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace proyectodeBaseDatos
 {
     internal class Empleado
-    {    
-        private int id { get; } 
-        private string name { get; set; }
-        private string apellido { get; set; }
-        private double sueldo {  get; set; }
-        private int tel {  get; set; }
-        private double bono { get; set; }
-        private string especialidad { get; set; }
-        private Boolean oficina {  get; set; }
+    {
+        public int id;
+        public string name;
+        public string apellido;
+        public double sueldo;
+        public double tel;
+        public double bono;
+        public string especialidad;
+        public Boolean oficina;
+        private String password;
 
 
         public Empleado() { }
 
-        public Empleado(int id, string name, double sueldo, int tel, double bono, string apellido)
+        public Empleado(int id, string name, double sueldo, double tel, double bono, string apellido, String password)
         {
             this.id = id;
             this.name = name;
@@ -29,28 +31,35 @@ namespace proyectodeBaseDatos
             this.tel = tel;
             this.bono = bono;
             this.apellido = apellido;
+            this.password = password;
         }
 
-        public Empleado(int id, string name, double sueldo, int tel ,string apellido, string especialidad )
+        public Empleado(int id, string name, double sueldo, double tel, string apellido, String password, string especialidad)
         {
             this.id = id;
             this.name = name;
-            this.apellido=apellido;
+            this.apellido = apellido;
             this.sueldo = sueldo;
             this.tel = tel;
             this.especialidad = especialidad;
+            this.password = password;
+
         }
 
-        public Empleado(int id, string name, double sueldo, int tel,string apellido, bool oficina)
+        public Empleado(int id, string name, double sueldo, double tel, string apellido, String password, bool oficina)
         {
             this.id = id;
-            this.apellido=apellido;
+            this.apellido = apellido;
             this.name = name;
             this.sueldo = sueldo;
             this.tel = tel;
             this.oficina = oficina;
+            this.password = password;
         }
-
+        public String getpassword()
+        {
+            return this.password;
+        }
 
         public override string ToString()
         {
@@ -83,5 +92,5 @@ namespace proyectodeBaseDatos
         }
     }
 
-    
+
 }

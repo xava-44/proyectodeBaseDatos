@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -19,8 +20,8 @@ namespace proyectodeBaseDatos
         {
             InitializeComponent();
             Empleado = new Empleado();
-           
-           
+
+
         }
 
 
@@ -28,56 +29,46 @@ namespace proyectodeBaseDatos
 
         private void buttonGuardar_Click(object sender, EventArgs e)
         {
-            string puesto=domainUpDown1.Text;
-             
-            if (puesto== "Administrador")
+            string puesto = domainUpDown1.Text;
+
+            String nom = textBoxname.Text;
+            String apel = textBoxApellido.Text;
+            int NoEmplea = int.Parse(textBoxIDempleado.Text);
+            double suel = double.Parse(textBoxSueldo.Text);
+            double tel = double.Parse(textBoxTelefono.Text);
+            String password = textBoxPassword.Text;
+
+            if (puesto == "Administrador")
             {
-                String nom=textBoxname.Text;
-                String apel = textBoxApellido.Text;
-                int  NoEmplea=int.Parse(textBoxIDempleado.Text);
-                double suel= double.Parse(textBoxSueldo.Text);
-                int  tel=int.Parse(textBoxTelefono.Text);
-
-                    Empleado nuevo = new Empleado(NoEmplea,nom,suel,tel,apel,true);
-
-
+                Empleado nuevo = new Empleado(NoEmplea, nom, suel, tel, apel, password, true);
                 string inf = nuevo.ToString();
 
+
+                metodos.Guardarempleado(nuevo);
                 MessageBox.Show("se registro corretamente el Administrador: " + inf);
-                
-               metodos.Guardarempleado(nuevo);
+
 
             }
-            else if (puesto =="Doctor")
+            else if (puesto == "Doctor")
             {
-                String nom = textBoxname.Text;
-                String apel = textBoxApellido.Text;
-                int NoEmplea = int.Parse(textBoxIDempleado.Text);
-                double suel = double.Parse(textBoxSueldo.Text);
-                int tel = int.Parse(textBoxTelefono.Text);
 
-                Empleado nuevo = new Empleado(NoEmplea, nom, suel, tel, apel,"pediatra");
+                Empleado nuevo = new Empleado(NoEmplea, nom, suel, tel, apel, password, "pediatra");
 
                 string inf = nuevo.ToString();
 
                 MessageBox.Show("se registro corretamente el Doctor: " + inf);
-                metodos.Guardarempleado (nuevo);
-                
+                metodos.Guardarempleado(nuevo);
+
+
 
             }
             else if (puesto == "Encargado de farmacia")
             {
-                String nom = textBoxname.Text;
-                String apel = textBoxApellido.Text;
-                int NoEmplea = int.Parse(textBoxIDempleado.Text);
-                double suel = double.Parse(textBoxSueldo.Text);
-                int tel = int.Parse(textBoxTelefono.Text);
+                Empleado nuevo = new Empleado(NoEmplea, nom, suel, tel, 23242, apel, password);
 
-                Empleado nuevo = new Empleado(NoEmplea, nom, suel, tel, 23242, apel);
+                string inf = nuevo.ToString();
 
-                string inf=nuevo.ToString();
-             
-                MessageBox.Show("se registro corretamente el asistente:  " +inf);
+                MessageBox.Show("se registro corretamente el asistente:  " + inf);
                 metodos.Guardarempleado(nuevo);
             }
 
@@ -113,8 +104,13 @@ namespace proyectodeBaseDatos
 
         private void buttonRegresa_Click(object sender, EventArgs e)
         {
-            
+
             this.Close();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

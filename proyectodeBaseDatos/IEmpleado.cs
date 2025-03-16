@@ -12,6 +12,7 @@ namespace proyectodeBaseDatos
         void Guardarempleado(Empleado empleado);
         List<Empleado> Listaempleados();
         Boolean EliminarEmpleado(Empleado empleado);
+    
 
 
 

@@ -41,6 +41,8 @@
             this.textBoxTelefono = new System.Windows.Forms.TextBox();
             this.buttonGuardar = new System.Windows.Forms.Button();
             this.buttonRegresa = new System.Windows.Forms.Button();
+            this.textBoxPassword = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -94,7 +96,7 @@
             this.domainUpDown1.Items.Add("Administrador");
             this.domainUpDown1.Items.Add("Encargado de farmacia");
             this.domainUpDown1.Items.Add("Doctor");
-            this.domainUpDown1.Location = new System.Drawing.Point(200, 359);
+            this.domainUpDown1.Location = new System.Drawing.Point(230, 408);
             this.domainUpDown1.Name = "domainUpDown1";
             this.domainUpDown1.ReadOnly = true;
             this.domainUpDown1.Size = new System.Drawing.Size(203, 26);
@@ -158,11 +160,30 @@
             this.buttonRegresa.UseVisualStyleBackColor = true;
             this.buttonRegresa.Click += new System.EventHandler(this.buttonRegresa_Click);
             // 
+            // textBoxPassword
+            // 
+            this.textBoxPassword.Location = new System.Drawing.Point(244, 340);
+            this.textBoxPassword.Name = "textBoxPassword";
+            this.textBoxPassword.Size = new System.Drawing.Size(100, 26);
+            this.textBoxPassword.TabIndex = 13;
+            this.textBoxPassword.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(152, 340);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(77, 20);
+            this.label6.TabIndex = 14;
+            this.label6.Text = "password";
+            // 
             // FormRegistro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 693);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.textBoxPassword);
             this.Controls.Add(this.buttonRegresa);
             this.Controls.Add(this.buttonGuardar);
             this.Controls.Add(this.textBoxTelefono);
@@ -198,5 +219,7 @@
         private System.Windows.Forms.TextBox textBoxTelefono;
         private System.Windows.Forms.Button buttonGuardar;
         private System.Windows.Forms.Button buttonRegresa;
+        private System.Windows.Forms.TextBox textBoxPassword;
+        private System.Windows.Forms.Label label6;
     }
 }
