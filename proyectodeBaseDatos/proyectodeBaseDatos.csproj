@@ -99,38 +99,83 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conexion.cs" />
+    <Compile Include="Consultas\Cambios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\Cambios.Designer.cs">
+      <DependentUpon>Cambios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\Empleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\Empleados.Designer.cs">
+      <DependentUpon>Empleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\Medicamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\Medicamento.Designer.cs">
+      <DependentUpon>Medicamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\Pacientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\Pacientes.Designer.cs">
+      <DependentUpon>Pacientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Empleado.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="Auth\FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Auth\FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormMenuAsistente.cs">
+    <Compile Include="Asistente\FrmAsistente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormMenuAsistente.Designer.cs">
-      <DependentUpon>FormMenuAsistente.cs</DependentUpon>
+    <Compile Include="Asistente\FrmAsistente.Designer.cs">
+      <DependentUpon>FrmAsistente.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormRegistro.cs">
+    <Compile Include="Auth\FrmRegistro.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormRegistro.Designer.cs">
-      <DependentUpon>FormRegistro.cs</DependentUpon>
+    <Compile Include="Auth\FrmRegistro.Designer.cs">
+      <DependentUpon>FrmRegistro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\FrmAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\FrmAdmin.Designer.cs">
+      <DependentUpon>FrmAdmin.cs</DependentUpon>
     </Compile>
     <Compile Include="IEmpleado.cs" />
     <Compile Include="Medicamento.cs" />
     <Compile Include="MetodosEmpleados.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Admin\FrmAdmin.resx">
+      <DependentUpon>FrmAdmin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormMenuAsistente.resx">
-      <DependentUpon>FormMenuAsistente.cs</DependentUpon>
+    <EmbeddedResource Include="Auth\FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormRegistro.resx">
-      <DependentUpon>FormRegistro.cs</DependentUpon>
+    <EmbeddedResource Include="Asistente\FrmAsistente.resx">
+      <DependentUpon>FrmAsistente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Auth\FrmRegistro.resx">
+      <DependentUpon>FrmRegistro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\Cambios.resx">
+      <DependentUpon>Cambios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\Empleados.resx">
+      <DependentUpon>Empleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\Medicamento.resx">
+      <DependentUpon>Medicamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\Pacientes.resx">
+      <DependentUpon>Pacientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
