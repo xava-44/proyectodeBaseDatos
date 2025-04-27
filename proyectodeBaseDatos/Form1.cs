@@ -25,30 +25,25 @@ namespace proyectodeBaseDatos
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int numempleado= int.Parse(textBoxNoEmpleado.Text);
-            string passw=textBoxPassword.Text;
-            
-            Boolean registro=user.ObtenerRegistro(numempleado, passw);
+            int numempleado = int.Parse(textBoxNoEmpleado.Text);
+            string passw = textBoxPassword.Text;
+
+            Boolean registro = user.ObtenerRegistro(numempleado, passw);
 
             if (registro)
             {
-                FormMenuAsistente formMenuAsistente = new FormMenuAsistente();
-                formMenuAsistente.MdiParent = this;
-                formMenuAsistente.Show();
+                // FormMenuAsistente formMenuAsistente = new FormMenuAsistente();
+                //// formMenuAsistente.MdiParent = this;
+                // formMenuAsistente.Show();
 
 
-            }else
+            } else
             {
                 MessageBox.Show("datos incorrectos ");
 
             }
-           
 
-
-
-
-
-        }
+        };
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -63,7 +58,7 @@ namespace proyectodeBaseDatos
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             FormRegistro registro = new FormRegistro();
-            registro.MdiParent = this;
+           // registro.MdiParent = this;
             registro.Show();
             //this.Close();
 

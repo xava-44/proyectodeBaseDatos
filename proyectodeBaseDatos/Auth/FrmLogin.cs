@@ -1,4 +1,5 @@
-﻿using System;
+﻿using proyectodeBaseDatos.Doctor;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,30 +22,45 @@ namespace proyectodeBaseDatos
         {
             int numempleado = int.Parse(textBoxNoEmpleado.Text);
             string passw = textBoxPassword.Text;
+            
+            int  registro = user.ObtenerRegistro(numempleado, passw);
+            string rol= user.Regresarol(registro);
 
-            Boolean registro = user.ObtenerRegistro(numempleado, passw);
+            Empleado u = user.RegresaEmpleado(registro);
+            
 
-            if (registro)
+            switch (rol)
             {
-                FrmAsistente formMenuAsistente = new FrmAsistente();
-                formMenuAsistente.MdiParent = this;
-                formMenuAsistente.Show();
+                case ("Administrador"):
+                   FrmAdmin frmAdmin = new FrmAdmin(registro);
+                   frmAdmin.MdiParent = this;
+                    frmAdmin.Show();
+                
+                    break;
+                case ("Auxiliar"):
+                    FrmAsistente formMenuAsistente = new FrmAsistente(registro);
+                    formMenuAsistente.MdiParent = this;
+                    formMenuAsistente.Show();
 
-
-            }
-            else
-            {
-                MessageBox.Show("datos incorrectos ");
+                    break;
+                case ("Doctor"):
+                    ForDoctor forDoctor = new ForDoctor(registro);
+                    forDoctor.MdiParent = this;
+                    forDoctor.Show();
+                    break;
+                default:
+                    MessageBox.Show("datos incorrectos ");
+                    break;
             }
         }
 
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            FrmRegistro registro = new FrmRegistro();
-            registro.MdiParent = this;
-            registro.Show();
-            //this.Close();
+            private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+            {
+                FrmRegistro registro = new FrmRegistro();
+                registro.MdiParent = this;
+                registro.Show();
+                //this.Close();
 
+            }
         }
-    }
 }

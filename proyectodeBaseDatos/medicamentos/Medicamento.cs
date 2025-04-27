@@ -23,5 +23,8 @@ namespace proyectodeBaseDatos
         {
             return $"id:{id},nombre:{nombre},fecha de caducidad:{fechacaduci}";
         }
+
+
+
     }
 }

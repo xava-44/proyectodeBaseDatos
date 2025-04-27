@@ -28,37 +28,17 @@ namespace proyectodeBaseDatos
             string nom = textBoxname.Text;
             string apel = textBoxApellido.Text;
             int NoEmplea = int.Parse(textBoxIDempleado.Text);
-            double suel = double.Parse(textBoxSueldo.Text);
+            decimal suel = decimal.Parse(textBoxSueldo.Text);
             double tel = double.Parse(textBoxTelefono.Text);
             string password = textBoxPassword.Text;
 
-            Empleado nuevo;
             string inf;
+           Empleado = new Empleado(NoEmplea, nom, suel, tel, apel, password);
+            inf = Empleado.ToString();
+            metodos.Guardarempleado(Empleado, puesto);
+            MessageBox.Show("se registro corretamente el Administrador: " + inf);
 
-            switch (puesto)
-            {
-                case "Administrador":
-                    nuevo = new Empleado(NoEmplea, nom, suel, tel, apel, password, true);
-                    inf = nuevo.ToString();
-                    metodos.Guardarempleado(nuevo);
-                    MessageBox.Show("se registro corretamente el Administrador: " + inf);
-                    break;
-                case "Doctor":
-                    nuevo = new Empleado(NoEmplea, nom, suel, tel, apel, password, "pediatra");
-                    inf = nuevo.ToString();
-                    MessageBox.Show("se registro corretamente el Doctor: " + inf);
-                    metodos.Guardarempleado(nuevo);
-                    break;
-                case "Encargado de farmacia":
-                    nuevo = new Empleado(NoEmplea, nom, suel, tel, 23242, apel, password);
-                    inf = nuevo.ToString();
-                    MessageBox.Show("se registro corretamente el asistente:  " + inf);
-                    metodos.Guardarempleado(nuevo);
-                    break;
-                default:
-                    MessageBox.Show("Puesto no reconocido.");
-                    return;
-            }
+
 
             FrmLogin form1 = new FrmLogin();
             form1.ShowDialog();

@@ -8,21 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace proyectodeBaseDatos
+namespace proyectodeBaseDatos.Doctor
 {
-    public partial class FrmAdmin: Form
+    public partial class ForDoctor : Form
     {
-
         private int num_empleado;
-        public FrmAdmin(int num_empleado)
+        public ForDoctor(int num_empleado)
         {
             InitializeComponent();
             this.num_empleado = num_empleado;
-        }
-
-        private void btnConsultarMedicamento_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

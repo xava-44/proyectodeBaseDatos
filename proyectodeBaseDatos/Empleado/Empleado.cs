@@ -10,9 +10,9 @@ namespace proyectodeBaseDatos
     internal class Empleado
     {
         public int Id { get; set; }
-        public string Name { get; set; }
+        public string Name {  get; set; }
         public string Apellido { get; set; }
-        public double Sueldo { get; set; }
+        public decimal Sueldo { get; set; }
         public double Tel { get; set; }
         public double Bono { get; set; }
         public string Especialidad { get; set; }
@@ -21,38 +21,16 @@ namespace proyectodeBaseDatos
 
         public Empleado() { }
 
-        public Empleado(int id, string name, double sueldo, double tel, double bono, string apellido, string password)
+        public Empleado(int id, string name, decimal sueldo, double tel, string apellido, string password)
         {
             Id = id;
             Name = name;
             Apellido = apellido;
             Sueldo = sueldo;
             Tel = tel;
-            Bono = bono;
             Password = password;
         }
 
-        public Empleado(int id, string name, double sueldo, double tel, string apellido, string password, string especialidad)
-        {
-            Id = id;
-            Name = name;
-            Apellido = apellido;
-            Sueldo = sueldo;
-            Tel = tel;
-            Especialidad = especialidad;
-            Password = password;
-        }
-
-        public Empleado(int id, string name, double sueldo, double tel, string apellido, string password, bool oficina)
-        {
-            Id = id;
-            Name = name;
-            Apellido = apellido;
-            Sueldo = sueldo;
-            Tel = tel;
-            Oficina = oficina;
-            Password = password;
-        }
 
         public string GetPassword()
         {
