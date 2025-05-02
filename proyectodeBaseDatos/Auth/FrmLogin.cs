@@ -12,8 +12,8 @@ using System.Windows.Forms;
 namespace proyectodeBaseDatos
 {
     public partial class FrmLogin : Form
-    {     
-        MetodosEmpleados user=new MetodosEmpleados();
+    {
+        MetodosEmpleados user = new MetodosEmpleados();
         public FrmLogin()
         {
             InitializeComponent();
@@ -22,45 +22,67 @@ namespace proyectodeBaseDatos
         {
             int numempleado = int.Parse(textBoxNoEmpleado.Text);
             string passw = textBoxPassword.Text;
-            
-            int  registro = user.ObtenerRegistro(numempleado, passw);
-            string rol= user.Regresarol(registro);
+
+            int registro = user.ObtenerRegistro(numempleado, passw);
+            string rol = user.Regresarol(registro);
 
             Empleado u = user.RegresaEmpleado(registro);
-            
+
 
             switch (rol)
             {
                 case ("Administrador"):
-                   FrmAdmin frmAdmin = new FrmAdmin(registro);
-                   frmAdmin.MdiParent = this;
-                    frmAdmin.Show();
-                
-                    break;
-                case ("Auxiliar"):
-                    FrmAsistente formMenuAsistente = new FrmAsistente(registro);
-                    formMenuAsistente.MdiParent = this;
-                    formMenuAsistente.Show();
+
+                    this.Hide();
+                    using (var nuevo = new FrmAdmin(registro))
+                    {
+                        nuevo.ShowDialog();
+                    }
+
+                    this.Show();
+                    textBoxNoEmpleado.Clear();
+                    textBoxPassword.Clear();
 
                     break;
+                case ("Auxiliar"):
+
+                    this.Hide();
+                    using (var nuevo = new FrmAsistente(registro))
+                    {
+                        nuevo.ShowDialog();
+                    }
+                    this.Show();
+                    textBoxNoEmpleado.Clear();
+                    textBoxPassword.Clear();
+                    break;
                 case ("Doctor"):
-                    ForDoctor forDoctor = new ForDoctor(registro);
-                    forDoctor.MdiParent = this;
-                    forDoctor.Show();
+                    this.Hide();
+                    using (var nuevo = new ForDoctor(registro))
+                    {
+                        nuevo.ShowDialog();
+                    }
+                    this.Show();
+                    textBoxNoEmpleado.Clear();
+                    textBoxPassword.Clear();
                     break;
                 default:
                     MessageBox.Show("datos incorrectos ");
+
                     break;
             }
         }
 
-            private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-            {
-                FrmRegistro registro = new FrmRegistro();
-                registro.MdiParent = this;
-                registro.Show();
-                //this.Close();
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
 
+
+            this.Hide();
+            using (var nuevo = new FrmRegistro())
+            {
+                nuevo.ShowDialog();
             }
+            this.Show();
+
         }
+    }
 }

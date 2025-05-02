@@ -210,6 +210,7 @@
             this.Controls.Add(this.label1);
             this.Name = "FrmRegistro";
             this.Text = "FormRegistro";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ResumeLayout(false);
             this.PerformLayout();
 

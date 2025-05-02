@@ -103,11 +103,47 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\EliminarEmpleado.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\EliminarEmpleado.Designer.cs">
+      <DependentUpon>EliminarEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UserListaEmpleados.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\UserListaEmpleados.Designer.cs">
+      <DependentUpon>UserListaEmpleados.cs</DependentUpon>
+    </Compile>
     <Compile Include="Asistente\AgregarMedic.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Asistente\AgregarMedic.Designer.cs">
       <DependentUpon>AgregarMedic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Asistente\listamedicamentos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Asistente\listamedicamentos.Designer.cs">
+      <DependentUpon>listamedicamentos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Asistente\UserControlEliminar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Asistente\UserControlEliminar.Designer.cs">
+      <DependentUpon>UserControlEliminar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Asistente\UserControlModificar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Asistente\UserControlModificar.Designer.cs">
+      <DependentUpon>UserControlModificar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Auth\ForContenedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Auth\ForContenedor.Designer.cs">
+      <DependentUpon>ForContenedor.cs</DependentUpon>
     </Compile>
     <Compile Include="Conexion.cs" />
     <Compile Include="Consultas\Cambios.cs">
@@ -172,11 +208,29 @@
     <Compile Include="medicamentos\MetodoMedicamento.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Admin\EliminarEmpleado.resx">
+      <DependentUpon>EliminarEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Admin\FrmAdmin.resx">
       <DependentUpon>FrmAdmin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Admin\UserListaEmpleados.resx">
+      <DependentUpon>UserListaEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Asistente\AgregarMedic.resx">
       <DependentUpon>AgregarMedic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Asistente\listamedicamentos.resx">
+      <DependentUpon>listamedicamentos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Asistente\UserControlEliminar.resx">
+      <DependentUpon>UserControlEliminar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Asistente\UserControlModificar.resx">
+      <DependentUpon>UserControlModificar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Auth\ForContenedor.resx">
+      <DependentUpon>ForContenedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Auth\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>

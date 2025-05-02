@@ -12,7 +12,7 @@ namespace proyectodeBaseDatos
 
         void Guardarempleado(Empleado empleado, string puesto );
         DataTable Listaempleados();
-        Boolean EliminarEmpleado(Empleado empleado);
+        Boolean EliminarEmpleado(int id_empleado);
     
 
 

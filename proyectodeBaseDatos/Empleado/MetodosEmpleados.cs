@@ -15,9 +15,27 @@ namespace proyectodeBaseDatos
 
         Conexion conne = new Conexion();
 
-        public bool EliminarEmpleado(Empleado empleado)
+        public bool EliminarEmpleado(int id_empleado)
         {
-            throw new NotImplementedException();
+
+            string eliminarmedic = "DELETE FROM usuario WHERE num_empleado= @num_empleado";
+            var parametros = new Dictionary<string, object>
+            {
+                {"@num_empleado",id_empleado }
+
+            };
+            int ID = conne.ExecuteNonQuery(eliminarmedic, parametros);
+
+            if (ID <= 0)
+            {
+
+                throw new Exception("ocurrio un error al eliminar medicamento");
+
+            }
+
+
+            return true;
+
         }
 
         public void Guardarempleado(Empleado empleado, string puesto)
@@ -72,7 +90,8 @@ namespace proyectodeBaseDatos
             string coman = "SELECT * FROM usuario";
 
             var tabla = conne.RegresaDataTable(coman,null);
-
+            if (tabla.Columns.Contains("id"))
+                tabla.Columns.Remove("id");
             return tabla;
         }
 
@@ -121,38 +140,7 @@ namespace proyectodeBaseDatos
 
         }
 
-        public string Regresadatos(int No_empleado, string sentencia)
-        {
-            String dato_usuario = "";
-
-            switch (sentencia)
-            {
-                case ("rol"):
-                    sentencia = @"SELECT r.nombre FROM usuario u 
-                JOIN roles r ON u.id_rol = r.id WHERE u.num_empleado = @num_empleado";
-                    break;
-                case ("nombre"):
-                    sentencia = "SELECT u.nombre FROM usuario u WHERE u.num_empleado = @num_empleado";
-
-                    break;
-                case ("apellido"):
-                    sentencia = "SELECT u.apellido FROM usuario u WHERE u.num_empleado = @num_empleado";
-                    break;
-                default:
-
-                    MessageBox.Show("el valor del usuario a buscar es incorrecto");
-                    return "";
-            }
-
-            var parametr = new Dictionary<string, object>
-                {
-                    {"@num_empleado",No_empleado }
-
-                };
-
-            return dato_usuario = conne.RegresaDatos(sentencia, parametr);
-
-        }
+       
 
         public Empleado RegresaEmpleado(int No_empleado)
         {

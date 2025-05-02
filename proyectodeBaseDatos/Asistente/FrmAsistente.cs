@@ -16,7 +16,7 @@ namespace proyectodeBaseDatos
 
         private int num_empleado;
         Empleado Empleado;
-       MetodosEmpleados metodos = new MetodosEmpleados();
+        MetodosEmpleados metodos = new MetodosEmpleados();
      
 
         public FrmAsistente(int num_empleado)
@@ -27,32 +27,49 @@ namespace proyectodeBaseDatos
 
         }
 
-         
-        
-
-        private void listamedicamento_Click(object sender, EventArgs e)
-        {   
-            panel1.Controls.Clear();
-            AgregarMedic agregar = new AgregarMedic();
-            agregar.Dock = DockStyle.Fill; 
-            panel1.Controls.Add(agregar);
-            
-
-
-        }
-       
-
         private void label_shown(object sender, EventArgs e)
         {
-           //string nom= metodos.Regresadatos(num_empleado,"nombre");
+           
             Empleado=metodos.RegresaEmpleado(num_empleado);
-
             labelbienvenida.Text = "Bienvenido "+Empleado.Name+" "+Empleado.Apellido;
         }
 
         private void FrmAsistente_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void medicamentosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            panel1.Controls.Clear();
+            listamedicamentos agregar = new listamedicamentos();
+            agregar.Dock = DockStyle.Fill;
+            panel1.Controls.Add(agregar);
+
+        }
+
+        private void agregarMedicamentoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            panel1.Controls.Clear();
+            AgregarMedic agregar = new AgregarMedic();
+            agregar.Dock = DockStyle.Fill;
+            panel1.Controls.Add(agregar);
+        }
+
+        private void modificarMedicamentoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            panel1.Controls.Clear();
+            UserControlModificar agregar = new UserControlModificar();
+            agregar.Dock = DockStyle.Fill;
+            panel1.Controls.Add(agregar);
+        }
+
+        private void eliminarMedicamentoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            panel1.Controls.Clear();
+            UserControlEliminar eliminar = new UserControlEliminar();
+            eliminar.Dock = DockStyle.Fill; ;
+            panel1.Controls.Add(eliminar);
         }
     }
 }

@@ -38,15 +38,20 @@ namespace proyectodeBaseDatos
             metodos.Guardarempleado(Empleado, puesto);
             MessageBox.Show("se registro corretamente el Administrador: " + inf);
 
+            
 
 
-            FrmLogin form1 = new FrmLogin();
-            form1.ShowDialog();
+            //FrmLogin form1 = new FrmLogin();
+            //form1.ShowDialog();
         }
 
         private void buttonRegresa_Click(object sender, EventArgs e)
         {
-            this.Close();
+
+
+            FrmLogin form1 = new FrmLogin();
+            form1.ShowDialog();
+            //this.Close();
         }
     }
 }

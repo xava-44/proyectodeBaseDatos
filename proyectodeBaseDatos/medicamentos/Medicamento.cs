@@ -8,20 +8,26 @@ namespace proyectodeBaseDatos
 {
     internal class Medicamento
     {
-        private string nombre { get; set; }
-        private int id { get; set; }
-        private double fechacaduci {  get; set; }
+        public string nombre { get; set; }
+        public int id { get; set; }
+        public DateTime fechacaduci {  get; set; }
+        public decimal precio { get; set; }
+        public int cantidad { get; set; }
+        public string descripcion { get; set; }
 
-        public Medicamento(string nombre, int id, double fechacaduci)
+        public Medicamento(int id ,string nombre,DateTime fechacaduci,decimal precio, int cantidad, string descripcion)
         {
             this.nombre = nombre;
             this.id = id;
             this.fechacaduci = fechacaduci;
+            this.precio = precio;
+            this.cantidad = cantidad;   
+            this.descripcion = descripcion;
         }
 
         public override string ToString()
         {
-            return $"id:{id},nombre:{nombre},fecha de caducidad:{fechacaduci}";
+            return $"id:{id},nombre:{nombre},fecha de caducidad:{fechacaduci},Precio:{precio},Descripcion:{descripcion}";
         }
 
 
